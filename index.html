@@ -1,172 +1,82 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Korepetycje z Matematyki — Umów lekcję</title>
-    <style>
-        :root{--bg:#f5f7fb;--card:#fff;--accent:#4CAF50;--accent-2:#37924a;--muted:#6b7280}
-        body{font-family:Inter,ui-sans-serif,system-ui,Arial,Helvetica,sans-serif;background:var(--bg);margin:0;padding:20px;color:#111}
-        .container{max-width:820px;margin:24px auto;background:var(--card);padding:28px;border-radius:12px;box-shadow:0 6px 24px rgba(12,15,20,0.06)}
-        h1{margin:0 0 8px;font-size:22px}
-        p.lead{margin:4px 0 18px;color:var(--muted)}
-        .btn{display:inline-block;padding:12px 16px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;border:none;cursor:pointer}
-        .steps{margin-top:18px}
-        .step{background:#fbfdff;padding:14px;border-radius:10px;margin-bottom:12px;border:1px solid #eef5ee}
-        .step h3{margin:0 0 6px;font-size:16px}
-        .code{background:#0f1724;color:#fff;padding:10px;border-radius:8px;word-break:break-word;font-family:monospace}
-        .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
-        .small{font-size:13px;color:var(--muted)}
-        .copy-btn{background:#111827;color:#fff;border-radius:8px;padding:6px 10px;border:none;cursor:pointer}
-        .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-        .note{margin-top:6px;color:var(--muted);font-size:13px}
-        .hidden{display:none}
-        footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Korepetycje z Matematyki</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f3f3f3;
+    }
+    header {
+      background: #4a90e2;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      margin-top: 0;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      background: #4a90e2;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 18px;
+      margin-top: 15px;
+      transition: 0.2s;
+    }
+    .btn:hover {
+      background: #357ac8;
+    }
+    .steps {
+      margin-top: 30px;
+      border-left: 4px solid #4a90e2;
+      padding-left: 15px;
+    }
+    .step {
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Umów lekcję — krok po kroku</h1>
-        <p class="lead">Kliknij przycisk poniżej, żeby zobaczyć proste kroki do umówienia korepetycji. Możesz skopiować gotowe wiadomości i wysłać je rodzicowi lub opiekunowi.</p>
+  <header>
+    <h1>Korepetycje z Matematyki – Online</h1>
+  </header>
 
-        <button id="openSteps" class="btn">Jak się umówić? (krok po kroku)</button>
+  <div class="container">
+    <h2>O mnie</h2>
+    <p>Jestem uczniem liceum z ocenami 5–6 z matematyki. Prowadzę proste i przyjazne korepetycje dla uczniów szkoły podstawowej.</p>
 
-        <div id="stepsArea" class="steps hidden" aria-hidden="true">
-            <div class="step">
-                <h3>1. Wybierz termin</h3>
-                <p class="small">Zastanów się, jakie dni i godziny Ci pasują. Podaj 3–4 propozycje, żeby rodzic mógł łatwiej wybrać.</p>
-                <div class="row">
-                    <div class="code">Przykład: Pon 17:00, Śr 16:00, Sob 10:00</div>
-                    <button class="copy-btn" data-copy>Skopiuj</button>
-                </div>
-            </div>
+    <h2>Cennik</h2>
+    <p>✔ 30 zł za 60 minut (online, Google Meet)</p>
 
-            <div class="step">
-                <h3>2. Napisz krótką wiadomość do rodzica/uczestnika</h3>
-                <p class="small">Możesz wysłać przez e-mail, Messenger lub WhatsApp. Skorzystaj z gotowych szablonów.</p>
-
-                <div style="margin-top:8px">
-                    <strong>Szablon 1 — szybki e-mail:</strong>
-                    <div class="code" id="emailTemplate">Cześć, jestem Olek. Udzielam korepetycji z matematyki online (Google Meet). Proponuję 1 lekcję próbną 60 min. Pasują: Pon 17:00, Śr 16:00 lub Sob 10:00. Cena 30 zł. Daj znać, który termin wybierasz.</div>
-                    <div class="row" style="margin-top:8px">
-                        <button class="copy-btn" data-copy-target="emailTemplate">Skopiuj e-mail</button>
-                        <a id="mailtoBtn" class="btn" href="#">Wyślij e-mail</a>
-                    </div>
-                    <div class="note">Po kliknięciu "Wyślij e-mail" otworzy się aplikacja pocztowa z wypełnionym tematem i treścią (jeśli Twoja przeglądarka ma domyślną aplikację pocztową).</div>
-                </div>
-
-                <div style="margin-top:12px">
-                    <strong>Szablon 2 — WhatsApp / Messenger:</strong>
-                    <div class="code" id="waTemplate">Cześć, tu Olek. Czy możemy umówić lekcję próbną z matematyki online? Proponuję: Pon 17:00; Śr 16:00; Sob 10:00. Cena 30 zł/60 min.</div>
-                    <div class="row" style="margin-top:8px">
-                        <button class="copy-btn" data-copy-target="waTemplate">Skopiuj wiadomość</button>
-                        <a id="waLink" class="btn" href="#" target="_blank">Otwórz WhatsApp</a>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="step">
-                <h3>3. Ustal szczegóły i link do Google Meet</h3>
-                <p class="small">Po potwierdzeniu terminu wygeneruj link Google Meet i wyślij go rodzicowi / uczniowi.</p>
-                <div class="row">
-                    <div class="code" id="meetTemplate">Przykład treści do wysłania z linkiem: Cześć — potwierdzam lekcję w Pon 17:00. Oto link do spotkania: https://meet.google.com/xxxx-xxxx-xxx</div>
-                    <button class="copy-btn" data-copy-target="meetTemplate">Skopiuj wzór</button>
-                </div>
-                <div class="note">Jeśli nie wiesz jak wygenerować link Google Meet — otwórz <em>meet.google.com</em>, kliknij "Nowe spotkanie" → "Utwórz spotkanie" → skopiuj link.</div>
-            </div>
-
-            <div class="step">
-                <h3>4. Potwierdzenie i przypomnienie</h3>
-                <p class="small">Wyślij potwierdzenie dzień przed lekcją i przypomnienie godzinę przed lekcją.</p>
-                <div class="row">
-                    <div class="code" id="reminderTemplate">Przypomnienie: Lekcja z matematyki dziś o 17:00. Link: https://meet.google.com/xxxx-xxxx-xxx</div>
-                    <button class="copy-btn" data-copy-target="reminderTemplate">Skopiuj przypomnienie</button>
-                </div>
-            </div>
-
-            <div class="step">
-                <h3>5. Po lekcji — krótkie info zwrotne</h3>
-                <p class="small">Po zajęciach wyślij rodzicowi krótkie podsumowanie: co przerobiliście i co warto powtórzyć.</p>
-                <div class="row">
-                    <div class="code" id="afterTemplate">Dziękuję za lekcję. Dzisiaj przerobiliśmy: działania na ułamkach, zadania tekstowe. Na następną lekcję proszę przygotować: zad. 5-7 z zeszytu. Cena: 30 zł.</div>
-                    <button class="copy-btn" data-copy-target="afterTemplate">Skopiuj podsumowanie</button>
-                </div>
-            </div>
-
-            <div class="step">
-                <h3>Pomocne akcje</h3>
-                <div class="actions">
-                    <button id="copyAll" class="btn">Skopiuj wszystkie propozycje terminów</button>
-                    <a id="openMeet" class="btn" href="https://meet.google.com" target="_blank">Otwórz Google Meet</a>
-                </div>
-                <div class="note">Możesz edytować skopiowane wiadomości przed wysłaniem. W linkach WhatsApp i e-mail wstawiłem przykładową treść, którą możesz zmienić.</div>
-            </div>
-
-        </div>
-
-        <footer>Masz pytanie? Napisz: <strong>olek@example.com</strong></footer>
+    <h2>Jak się umówić?</h2>
+    <div class="steps">
+      <div class="step">
+        <strong>Krok 1:</strong> Napisz do mnie maila lub SMS.
+      </div>
+      <div class="step">
+        <strong>Krok 2:</strong> Podaj, kiedy chcesz mieć lekcję.
+      </div>
+      <div class="step">
+        <strong>Krok 3:</strong> Dostaniesz ode mnie link do Google Meet.
+      </div>
     </div>
 
-    <script>
-        // elementy
-        const openBtn = document.getElementById('openSteps');
-        const stepsArea = document.getElementById('stepsArea');
-        const mailtoBtn = document.getElementById('mailtoBtn');
-        const waLink = document.getElementById('waLink');
-
-        // przykładowe dane do mailto / whatsapp (zmień adres e-mail na swój)
-        const email = 'olek@example.com';
-        const mailSubject = encodeURIComponent('Umówienie lekcji próbnej z matematyki');
-        const mailBody = encodeURIComponent(document.getElementById('emailTemplate')?.innerText || 'Cześć');
-        mailtoBtn.href = `mailto:${email}?subject=${mailSubject}&body=${mailBody}`;
-
-        // WhatsApp (międzynarodowy format – rodzic doda numer docelowy)
-        const waText = encodeURIComponent(document.getElementById('waTemplate')?.innerText || 'Cześć');
-        // Jeśli chcesz podać numer: use https://wa.me/48NUMER?text=...
-        waLink.href = `https://api.whatsapp.com/send?text=${waText}`;
-
-        // otwieranie kroków
-        openBtn.addEventListener('click', () => {
-            const hidden = stepsArea.classList.toggle('hidden');
-            stepsArea.setAttribute('aria-hidden', hidden.toString());
-            openBtn.innerText = hidden ? 'Jak się umówić? (krok po kroku)' : 'Zamknij kroki';
-        });
-
-        // kopiowanie tekstów
-        document.querySelectorAll('[data-copy-target]').forEach(btn => {
-            btn.addEventListener('click', e => {
-                const id = e.currentTarget.getAttribute('data-copy-target');
-                const txt = document.getElementById(id).innerText;
-                navigator.clipboard.writeText(txt).then(()=>{
-                    e.currentTarget.innerText = 'Skopiowano!';
-                    setTimeout(()=> e.currentTarget.innerText = 'Skopiuj wiadomość',1200);
-                }).catch(()=>alert('Kopiowanie nie powiodło się.'));
-            });
-        });
-
-        // kopiowanie pojedynczych prostych bloków (pierwsze przyciski bez targetu kopiują najbliższy .code)
-        document.querySelectorAll('.copy-btn:not([data-copy-target])').forEach(btn => {
-            btn.addEventListener('click', e => {
-                const code = e.currentTarget.parentElement.querySelector('.code');
-                if(!code) return;
-                navigator.clipboard.writeText(code.innerText).then(()=>{
-                    e.currentTarget.innerText = 'Skopiowano!';
-                    setTimeout(()=> e.currentTarget.innerText = 'Skopiuj',1200);
-                }).catch(()=>alert('Kopiowanie nie powiodło się.'));
-            });
-        });
-
-        // copy all (kopiuje proponowane terminy z pierwszego .code)
-        document.getElementById('copyAll').addEventListener('click', e=>{
-            const first = document.querySelector('.steps .step .code');
-            if(!first) return;
-            navigator.clipboard.writeText(first.innerText).then(()=>{
-                e.innerText = 'Skopiowano!';
-                setTimeout(()=> e.innerText = 'Skopiuj wszystkie propozycje terminów',1500);
-            }).catch(()=>alert('Kopiowanie nie powiodło się.'));
-        });
-
-    </script>
+    <a href="#" class="btn">Umów lekcję</a>
+  </div>
 </body>
 </html>
