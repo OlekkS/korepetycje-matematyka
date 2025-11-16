@@ -6,77 +6,82 @@
   <title>Korepetycje z Matematyki</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: #f3f3f3;
+      margin: 0;
+      padding: 0;
+      background: #da8062;
+      color: #000000;
     }
     header {
-      background: #4a90e2;
-      color: white;
-      padding: 20px;
+      background: #d1aa6b;
+      color: #000000;
+      padding: 2rem;
       text-align: center;
     }
     .container {
       max-width: 800px;
-      margin: 20px auto;
-      background: white;
-      padding: 25px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem;
       border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
-    h2 {
+    h1, h2 {
       margin-top: 0;
     }
-    .btn {
+    .cta {
       display: inline-block;
-      padding: 12px 18px;
-      background: #4a90e2;
-      color: white;
+      margin-top: 1rem;
+      background: #da8062;
+      color: #000000;
+      padding: 0.8rem 1.4rem;
       border-radius: 8px;
       text-decoration: none;
-      font-size: 18px;
-      margin-top: 15px;
-      transition: 0.2s;
+      font-weight: bold;
     }
-    .btn:hover {
-      background: #357ac8;
-    }
-    .steps {
-      margin-top: 30px;
-      border-left: 4px solid #4a90e2;
-      padding-left: 15px;
-    }
-    .step {
-      margin-bottom: 20px;
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #555;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Korepetycje z Matematyki – Online</h1>
+    <h1>Korepetycje z Matematyki</h1>
+    <p>Pomoc dla uczniów szkół podstawowych 4-6</p>
   </header>
 
   <div class="container">
-    <h2>O mnie</h2>
-    <p>Jestem uczniem liceum z ocenami 5–6 z matematyki. Prowadzę proste i przyjazne korepetycje dla uczniów szkoły podstawowej.</p>
+    <h2>Kim jestem?</h2>
+    <p>
+      Jestem uczniem 1 klasy liceum z ocenami 5–6 z matematyki na rozszerzeniu. Tłumaczę wszystko w prosty, spokojny sposób.
+      Pomagam w zadaniach domowych, przygotowaniu do kartkówek, sprawdzianów i prac klasowych.
+    </p>
 
-    <h2>Cennik</h2>
-    <p>✔ 30 zł za 60 minut (online, Google Meet)</p>
+    <h2>Zakres pomocy</h2>
+    <ul>
+      <li>Klasy 4–6 szkoły podstawowej</li>
+      <li>Wsparcie przed sprawdzianami</li>
+    </ul>
 
-    <h2>Jak się umówić?</h2>
-    <div class="steps">
-      <div class="step">
-        <strong>Krok 1:</strong> Napisz do mnie maila lub SMS.
-      </div>
-      <div class="step">
-        <strong>Krok 2:</strong> Podaj, kiedy chcesz mieć lekcję.
-      </div>
-      <div class="step">
-        <strong>Krok 3:</strong> Dostaniesz ode mnie link do Google Meet.
-      </div>
-    </div>
+    <h2>Cena</h2>
+    <p>30–40 zł za 60 minut (zajęcia online – Google Meet).</p>
 
-    <a href="#" class="btn">Umów lekcję</a>
+    <h2>Kontakt</h2>
+    <p>Napisz do mnie, aby umówić pierwszą lekcję:</p>
+    <ul>
+      <li>E‑mail: <strong>aleksander.sciepko@gmail.com</strong></li>
+      <li>Messenger / Instagram: <strong>Aleksander Sciepko</strong></li>
+      <li>Messenger / Nr. telefonu: <strong>48+ 511544931</strong></li>
+    </ul>
+
+    <a class="cta" href="mailto:twojmail@example.com">Umów lekcję</a>
   </div>
+
+  <footer>
+    © 2025 Korepetycje z Matematyki – wszystkie prawa zastrzeżone
+  </footer>
 </body>
 </html>
