@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Korepetycje z Matematyki</title>
+  <title>Korepetycje z Matematyki – Umów Lekcję</title>
+  <meta name="description" content="Umów lekcję korepetycji z matematyki z Aleksandrem. Wybierz kontakt mailowy, telefoniczny lub przez media społecznościowe.">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,12 +13,14 @@
       background: #da8062;
       color: #000000;
     }
+
     header {
       background: #d1aa6b;
-      color: #000000;
+      color: #222;
       padding: 2rem;
       text-align: center;
     }
+
     .container {
       max-width: 800px;
       margin: 2rem auto;
@@ -26,64 +29,111 @@
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
+
     h1, h2 {
       margin-top: 0;
     }
+
     .cta {
       display: inline-block;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
       background: #da8062;
       color: #000000;
-      padding: 0.8rem 1.4rem;
-      border-radius: 8px;
+      padding: 1rem 1.6rem;
+      border-radius: 10px;
       text-decoration: none;
       font-weight: bold;
+      font-size: 18px;
+      cursor: pointer;
     }
+
+    .cta:hover {
+      background: #c46f55;
+    }
+
+    form label {
+      font-weight: bold;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.3rem;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    form button {
+      margin-top: 0.5rem;
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
-      color: #555;
+      color: #000000;
       margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 1rem;
+        padding: 1rem;
+      }
+      .cta {
+        padding: 0.8rem 1.2rem;
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Korepetycje z Matematyki</h1>
-    <p>Pomoc dla uczniów szkół podstawowych 4-6</p>
+    <h1>Umów Lekcję</h1>
+    <p>Wybierz metodę kontaktu i zarezerwuj termin</p>
   </header>
 
   <div class="container">
-    <h2>Kim jestem?</h2>
-    <p>
-      Jestem uczniem 1 klasy liceum z ocenami 5–6 z matematyki na rozszerzeniu. Tłumaczę wszystko w prosty, spokojny sposób.
-      Pomagam w zadaniach domowych, przygotowaniu do kartkówek, sprawdzianów i prac klasowych.
-    </p>
+    <h2>Jak się umówić?</h2>
+    <p>Wybierz jedną z poniższych opcji lub użyj formularza, aby wysłać swoją propozycję terminu:</p>
 
-    <h2>Zakres pomocy</h2>
     <ul>
-      <li>Klasy 4–6 szkoły podstawowej</li>
-      <li>Wsparcie przed sprawdzianami</li>
+      <li>E‑mail: <strong>alekXXXXXXXXXXXXX@gmail.com</strong></li>
+      <li>Messenger / Instagram: <strong>Aleksander XXXXXXXX</strong></li>
+      <li>Telefon / SMS: <strong>48+ XXXXXXXXX</strong></li>
     </ul>
 
-    <h2>Cena</h2>
-    <p>30–40 zł za 60 minut (zajęcia online – Google Meet).</p>
+    <!-- Działający przycisk -->
+    <a class="cta" href="#formularz" aria-label="Przejdź do formularza umówienia lekcji">
+      Umów lekcję
+    </a>
+  </div>
 
-    <h2>Kontakt</h2>
-    <p>Napisz do mnie, aby umówić pierwszą lekcję:</p>
-    <ul>
-      <li>E‑mail: <strong>aleksander.sciepko@gmail.com</strong></li>
-      <li>Messenger / Instagram: <strong>Aleksander Sciepko</strong></li>
-      <li>Messenger / Nr. telefonu: <strong>48+ 511544931</strong></li>
-    </ul>
+  <!-- Formularz -->
+  <div id="formularz" class="container">
+    <h2>Formularz umówienia lekcji</h2>
+    <form action="mailto:alekXXXXXXXXXXXXX@gmail.com" method="post" enctype="text/plain">
+      <label for="name">Imię i nazwisko:</label>
+      <input type="text" id="name" name="name" required>
 
-    <a class="cta" href="mailto:twojmail@example.com">Umów lekcję</a>
+      <label for="email">Twój e-mail:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="date">Proponowany termin:</label>
+      <input type="text" id="date" name="date" placeholder="np. 12.11.2025, godz. 15:00" required>
+
+      <label for="message">Dodatkowe informacje:</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+
+      <button type="submit" class="cta">Wyślij</button>
+    </form>
   </div>
 
   <footer>
-    © 2025 Korepetycje z Matematyki – wszystkie prawa zastrzeżone Labubu
+    © 2025 Korepetycje z Matematyki – wszystkie prawa zastrzeżone
   </footer>
+
 </body>
 </html>
-
-
